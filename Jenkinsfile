@@ -6,9 +6,10 @@ pipeline {
   stages {
     stage('Startup') {
       steps {
+        sh 'apk add nodejs'
+        sh 'echo $PATH'
         sh 'npm install'
         sh 'ls'
-        sh 'cd ios && pod install'
       }
     }
     stage('Test') {
